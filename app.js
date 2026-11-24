@@ -49,5 +49,6 @@ recovery.addEventListener("submit", (event) => {
 
 recovery.addEventListener("reset", () => {
   currentHealth.setCustomValidity("");
-  queueMicrotask(resetProgress);
+  // Wait for the browser to restore the input defaults.
+  setTimeout(resetProgress, 0);
 });
